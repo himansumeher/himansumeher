@@ -9,9 +9,6 @@ server:
 spring:
   application:
     name: course-service
-  cloud:
-    config:
-      profile: ${config.profile.active}
   config:
     import:
     - optional:configserver:http://localhost:8888  
@@ -23,11 +20,8 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
-  profiles:
-    active: ${profile.active}
-#    default: dev
     
 COURSE-SERVICE:
-  courseName: The Course Name Local
-  courseDescription: The Course Description Local
+  courseName: The Course Name Git Default Profile
+  courseDescription: The Course Description Git Default Profile
   
