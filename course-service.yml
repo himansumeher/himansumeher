@@ -1,9 +1,7 @@
 #  cloud:
 #    config:
 #      profile: ${config.profile.active}
-  config:
-    import:
-    - optional:configserver:http://localhost:8888  
+spring:
   datasource:
     password: ims
     url: jdbc:h2:mem:imsdb
