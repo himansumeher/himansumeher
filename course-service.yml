@@ -1,0 +1,33 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    instance-id: ${spring.application.name}:${random.value}
+server:
+  port: ${server.port}
+spring:
+  application:
+    name: course-service
+  cloud:
+    config:
+      profile: ${config.profile.active}
+  config:
+    import:
+    - optional:configserver:http://localhost:8888  
+  datasource:
+    password: ims
+    url: jdbc:h2:mem:imsdb
+    username: ims
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  profiles:
+    active: ${profile.active}
+#    default: dev
+    
+COURSE-SERVICE:
+  courseName: The Course Name Local
+  courseDescription: The Course Description Local
+  
